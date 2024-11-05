@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.font-old-standard-tt {
+    font-family: var(--font-old-standard-tt), serif;
+  }
+  .navbar-background {
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
+    padding: 1rem 0;
+  }
+  
+  .menu-item {
+    position: relative;
+    padding: 1rem 2rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.125rem;
+  }
+  
+  .menu-item:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+  
+  .menu-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+
+.font-inconsolata {
+    font-family: 'Inconsolata', monospace;
+  }
+  
+  .section {
+    position: relative;
+    z-index: 1;
+    margin-top: -6rem; /* This will pull the section up, creating the overlap */
+  }
+  
+  .hero-section {
+    z-index: 10;
+  }
+  
+  .features-section {
+    z-index: 9;
+  }
+  
+  .contributors-section {
+    z-index: 8;
+  }
+  
