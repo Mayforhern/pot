@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 
 interface ContributorsProps {
   highlightedIndex: number;
@@ -19,7 +19,8 @@ const contributorsData = [
   { id: 9, name: "idk", image: "/admins/contributor10.jpg", telegramLink: "https://t.me/idk" }
 ];
 
-const Contributors: React.FC<ContributorsProps> = ({ highlightedIndex }) => {
+// Use forwardRef to pass ref down to the section
+const Contributors = forwardRef<HTMLDivElement, ContributorsProps>(({ highlightedIndex }, ref) => {
   const [imageError, setImageError] = useState<Record<number, boolean>>({});
 
   const handleImageError = (index: number) => {
@@ -27,7 +28,7 @@ const Contributors: React.FC<ContributorsProps> = ({ highlightedIndex }) => {
   };
 
   return (
-    <section className="py-20 bg-black">
+    <section id="contributors" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -45,7 +46,7 @@ const Contributors: React.FC<ContributorsProps> = ({ highlightedIndex }) => {
               href={contributor.telegramLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="block" // Ensures the whole div is clickable
+              className="block"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -71,12 +72,10 @@ const Contributors: React.FC<ContributorsProps> = ({ highlightedIndex }) => {
                     {contributor.name}
                   </div>
                 )}
-                <div 
-                  className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 ${
-                    highlightedIndex === index ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-                <div className={`absolute bottom-0 left-0 right-0 p-2 text-center text-white text-sm font-semibold transition-opacity duration-300 ${
+                <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent ${
+                  highlightedIndex === index ? 'opacity-100' : 'opacity-0'
+                }`} />
+                <div className={`absolute bottom-0 left-0 right-0 p-2 text-center text-white text-sm font-semibold ${
                   highlightedIndex === index ? 'opacity-100' : 'opacity-0'
                 }`}>
                   {contributor.name}
@@ -88,6 +87,8 @@ const Contributors: React.FC<ContributorsProps> = ({ highlightedIndex }) => {
       </div>
     </section>
   );
-};
+});
+
+Contributors.displayName = 'Contributors';
 
 export default Contributors;

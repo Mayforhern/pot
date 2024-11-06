@@ -69,15 +69,98 @@ body {
     margin-top: -6rem; /* This will pull the section up, creating the overlap */
   }
   
-  .hero-section {
-    z-index: 10;
-  }
-  
-  .features-section {
-    z-index: 9;
-  }
+
+
   
   .contributors-section {
     z-index: 8;
+  }
+  .header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1.3rem 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.87); /* Adjust as needed */
+    z-index: 100;
+}
+
+.navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.87); /* Adjust as needed */
+    box-shadow: 0 1rem rgba(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar li a {
+    display: block;
+    padding: 1rem;
+    color: #fff;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.login ul {
+    display: flex;
+}
+
+.login ul li {
+    margin-left: 20px;
+}
+.sub-menu-item {
+    display: block; /* Make items block-level for easier clicking */
+    padding: 5px 20px; /* Padding for sub-menu items */
+    color: #5a5a5a; /* Text color for sub-menu items */
+    text-decoration: none; /* Remove underline */
+    font-size: 0.875rem; /* Reduce font size (adjust as needed) */
+
+  }
+  
+  .sub-menu-item:hover {
+    background-color: #666; /* Change background on hover */
+    color: white; /* Change text color on hover */
+  }
+  .logo {
+    font-size: 1.5rem; /* Adjust size as needed */
+ /* Optional: make it bold */
+    color: white; /* Change text color to white */
+  }
+ /* Debugging styles */
+.Canvas {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  }
+  
+.hero-section, .bouncy-cards-features {
+    background-color: transparent !important; /* Ensure transparency */
+    position: relative;
+    z-index: 10; /* Make sure it's layered correctly */
+}
+.contributors-section,
+.clip-path-links,
+.footer {
+  background-color: transparent;
+}
+html {
+    scroll-behavior: smooth;
   }
   
