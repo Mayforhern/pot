@@ -164,3 +164,19 @@ html {
     scroll-behavior: smooth;
   }
   
+/* Global CSS */
+/* Global CSS */
+.contributor-item {
+    padding: 2px; /* Adjust the spacing between items */
+  }
+  
+  .contributor-image {
+    transition: transform 0.3s ease-in-out; /* Smooth scale transition */
+    transform: scale(0.8); /* Reduce the image size */
+  }
+  
+  .contributor-image:hover {
+    transform: scale(1.1); /* Slightly increase the size on hover */
+  }
+  
+  
