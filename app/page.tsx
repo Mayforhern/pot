@@ -3,11 +3,13 @@
 import { useState, useEffect } from 'react';
 import { Old_Standard_TT } from 'next/font/google';
 import Contributors from './Contributors';
+import { Analytics } from "@vercel/analytics/react"
 import Navbar from './Navbar';
 import HeroSection from './HeroSection';
 import BouncyCardsFeatures from './BouncyCardsFeatures';
 import ClipPathLinks from './ClipPathLinks';
 import Footer from './Footer';
+
 import ParticleRing from './ParticleRing';
 
 const oldStandardTT = Old_Standard_TT({ 

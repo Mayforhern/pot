@@ -6,19 +6,18 @@ interface ContributorsProps {
 }
 
 const contributorsData = [
-  { id: 0, name: "Shinno", image: "/admins/contributor1.jpg", telegramLink: "https://t.me/shinno" },
-  { id: 1, name: "Ace", image: "/admins/contributor2.jpg", telegramLink: "https://t.me/ace" },
+  { id: 0, name: "Shinno", image: "/admins/contributor1.jpg", telegramLink: "https://t.me/" },
+  { id: 1, name: "Ace", image: "/admins/contributor2.jpg", telegramLink: "https://t.me/dyslexic_ace" },
   { id: 2, name: "Hayato", image: "/admins/contributor3.jpg", telegramLink: "https://t.me/stewieshallrule" },
   { id: 3, name: "May", image: "/admins/contributor4.jpg", telegramLink: "https://t.me/gojobaka" },
   { id: 4, name: "Velocity", image: "/admins/contributor5.jpg", telegramLink: "https://t.me/VEIOC1TY" },
-  { id: 5, name: "Alucard", image: "/admins/contributor6.jpg", telegramLink: "https://t.me/alucard" },
+  { id: 5, name: "Alucard", image: "/admins/contributor6.jpg", telegramLink: "https://t.me/" },
   { id: 6, name: "Co owner?", image: "/admins/contributor7.jpg", telegramLink: "https://t.me/Organism69" },
-  { id: 7, name: "Avogado", image: "/admins/contributor8.jpg", telegramLink: "https://t.me/avogado" },
-  { id: 8, name: "Hope", image: "/admins/contributor9.jpg", telegramLink: "https://t.me/hope" },
-  { id: 9, name: "idk", image: "/admins/contributor10.jpg", telegramLink: "https://t.me/idk" }
+  { id: 7, name: "Avogado", image: "/admins/contributor8.jpg", telegramLink: "https://t.me/Ballsdippedintoacid" },
+  { id: 8, name: "Hope", image: "/admins/contributor9.jpg", telegramLink: "https://t.me/Hopefoolfr" },
+  { id: 9, name: "idk", image: "/admins/contributor10.jpg", telegramLink: "https://t.me/" }
 ];
 
-// Use forwardRef to pass ref down to the section
 const Contributors = forwardRef<HTMLDivElement, ContributorsProps>(({ highlightedIndex }, ref) => {
   const [imageError, setImageError] = useState<Record<number, boolean>>({});
 
