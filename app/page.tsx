@@ -32,6 +32,7 @@ export default function Page() {
   return (
     <div className="text-gray-900">
       <Navbar />
+      <Analytics/>
 
       {/* ParticleRing as fixed background */}
       <div className="fixed inset-0 -z-10">
