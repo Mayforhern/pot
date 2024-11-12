@@ -145,6 +145,7 @@ const CenterImage = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
+
     >
       <div className="absolute inset-0 flex items-center justify-start px-6 py-8 z-20 text-left mt-80">
         <div className="text-white w-1/2">
