@@ -5,42 +5,44 @@ import Image from "next/image"
 
  function Component() {
   const galleryImages = [
-    { src: "/gal/image1.jpg", alt: "Crowd dancing at night club" },
-    { src: "/gal/image2.png", alt: "Friends enjoying party" },
-    { src: "/gal/image3.png", alt: "Concert light show" },
-    { src: "/gal/image4.png", alt: "Fireworks display" },
-    { src: "/gal/image5.png", alt: "Laser light show" },
-    { src: "/gal/image6.png", alt: "Stage performance" },
-    { src: "/gal/image7.png", alt: "Balloon drop moment" },
-    { src: "/gal/image8.png", alt: "Dance floor celebration" },
+    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Crowd dancing at night club" },
+    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Friends enjoying party" },
+    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Concert light show" },
+    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Fireworks display" },
+    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Laser light show" },
+    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Stage performance" },
+    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Balloon drop moment" },
+    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Dance floor celebration" },
   ]
+  
 
   const organizers = [
     {
       name: "Shridh Jaiswal",
       role: "Founder",
-      image: "/gal/image1.jpg", // Make sure this path is correct
+      image: "https://i.postimg.cc/zDSpwbVq/image1.png", // Updated photo URL
       instagram: "https://www.instagram.com/sshridhjaiswal?igsh=MXI1cm5tODVybnUzMg==",
     },
     {
       name: "Kavya Dodwani",
       role: "Co-founder",
-      image: "/gal/image1.jpg",
+      image: "https://i.postimg.cc/zDSpwbVq/image1.png", // Updated photo URL
       instagram: "https://www.instagram.com/kvx_.01?igsh=amFoNnI3YmE4Ymxv",
     },
     {
       name: "Harsh Anchal",
       role: "Partner",
-      image: "/gal/image1.jpg",
+      image: "https://i.postimg.cc/zDSpwbVq/image1.png", // Updated photo URL
       instagram: "https://www.instagram.com/harshanchal_008?igsh=MTRqNncxbWFwZHd0bA%3D%3D&utm_source=qr",
     },
     {
       name: "Sai Raj Sekhar",
       role: "Partner",
-      image: "/gal/image1.jpg",
+      image: "https://i.postimg.cc/zDSpwbVq/image1.png", // Updated photo URL
       instagram: "https://www.instagram.com/_tablaplayersai_24?igsh=MWg4c2t3ZWxnemI1Zw==",
     },
   ]
+  
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white font-Poppins,sans-serif]">
@@ -121,13 +123,14 @@ import Image from "next/image"
                   target="_blank"  // Open in new tab
                   rel="noopener noreferrer"
                 >
-                  <Image 
-                    src="/instagram.png"  // Instagram logo path
-                    alt="Instagram"
-                    width={48}
-                    height={48}
-                    className="transition-transform duration-300 transform hover:scale-110"
-                  />
+                 <Image 
+  src="https://i.postimg.cc/mkRRFzhP/instagram.png"  // New Instagram logo URL
+  alt="Instagram"
+  width={48}
+  height={48}
+  className="transition-transform duration-300 transform hover:scale-110"
+/>
+
                 </a>
               </motion.div>
             ))}

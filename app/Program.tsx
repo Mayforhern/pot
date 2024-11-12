@@ -52,9 +52,12 @@ function AnimatedSection({ children }: { children: ReactNode }) {
         <AnimatedSection>
           <div className="flex">
             {[
-              { title: "DJ", image: "/Program/image1.jpg" },
-              { title: "Dancing", image: "/Program/image2.jpg" },
-              { title: "Live Band Performance", image: "/Program/image3.jpg" },
+              
+                { title: "DJ", image: "https://i.postimg.cc/T2JhJmg2/image1.png" },
+                { title: "Dancing", image: "https://i.postimg.cc/bYgNtPfs/image2.png" },
+                { title: "Live Band Performance", image: "https://i.postimg.cc/90Q2p4Hz/image3.png" },
+              
+              
             ].map((feature, index) => (
               <motion.div
                 key={feature.title}
