@@ -1,77 +1,147 @@
-'use client';
-import React, { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { useEffect, ReactNode } from "react";
+import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Clock, Music, Wine } from "lucide-react"; 
 
-const BouncyCardsFeatures = () => {
-  return (
-    <section className="mx-auto max-w-7xl px-4 py-12 text-gray-100">
-      <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
-        <h2 className="max-w-lg text-4xl font-bold md:text-6xl text-white">
-          Rules in The Axis
-          <span className="text-gray-400"> - all in one solution</span>
-        </h2>
-      </div>
-      <div className="mb-4 grid grid-cols-12 gap-4">
-        <BounceCard className="col-span-12 md:col-span-4">
-          <CardTitle>Do these things</CardTitle>
-          <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-purple-500 to-blue-500 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-            <span className="block text-center font-semibold text-gray-100">
-              Harassment of other members will be tolerated.
-            </span>
-          </div>
-        </BounceCard>
-        <BounceCard className="col-span-12 md:col-span-8">
-          <CardTitle>Do another thing</CardTitle>
-          <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-yellow-500 to-orange-600 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-            <span className="block text-center font-semibold text-gray-900">
-              Maintain respect for all members and their views. If you are a hizru boi, you may receive additional privileges.
-            </span>
-          </div>
-        </BounceCard>
-      </div>
-      <div className="grid grid-cols-12 gap-4">
-        <BounceCard className="col-span-12 md:col-span-8">
-          <CardTitle>And this too</CardTitle>
-          <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-green-500 to-teal-500 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-            <span className="block text-center font-semibold text-gray-900">
-              Show respect, compassion, and kindness at all times to your fellow members.
-            </span>
-          </div>
-        </BounceCard>
-        <BounceCard className="col-span-12 md:col-span-4">
-          <CardTitle>And finally this</CardTitle>
-          <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-pink-500 to-red-600 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-            <span className="block text-center font-semibold text-gray-100">
-              Respect LGBTQ+ community.
-            </span>
-          </div>
-        </BounceCard>
-      </div>
-    </section>
-  );
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
 };
 
-const BounceCard = ({
-  className,
-  children,
-}: {
-  className: string;
-  children: ReactNode;
-}) => {
+function AnimatedSection({ children }: { children: ReactNode }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <motion.div
-      whileHover={{ scale: 0.95, rotate: "-1deg" }}
-      className={`group relative min-h-[300px] cursor-pointer overflow-hidden rounded-2xl bg-[#252329] p-8 ${className}`}
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={fadeInUp}
+      transition={{ duration: 0.5 }}
     >
       {children}
     </motion.div>
   );
-};
+}
 
-const CardTitle = ({ children }: { children: ReactNode }) => {
+export default function Component() {
   return (
-    <h3 className="mx-auto text-center text-3xl font-semibold text-white">{children}</h3>
-  );
-};
+    <div className="max-w-full min-h-screen bg-zinc-950 text-white py-12">
+      <div className="max-w-6xl mx-auto space-y-24">
+        {/* Header */}
+        <AnimatedSection>
+          <div className="text-center space-y-4">
+            <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+              Party Program
+            </h1>
+            <p className="text-white/80 max-w-2xl mx-auto mt-40">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            </p>
+          </div>
+        </AnimatedSection>
 
-export default BouncyCardsFeatures;
+        {/* Feature Grid */}
+        <AnimatedSection>
+          <div className="flex">
+            {[
+              { title: "DJ", image: "/Program/image1.jpg" },
+              { title: "Dancing", image: "/Program/image2.jpg" },
+              { title: "Live Band Performance", image: "/Program/image3.jpg" },
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                className="relative group overflow-hidden flex-1"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={400}
+                  height={300}
+                  className="object-cover w-full h-[200px] group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/40" />
+                <h2 className="absolute bottom-4 left-4 text-2xl font-bold text-white">
+                  {feature.title}
+                </h2>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
+
+        {/* What's Included */}
+        <AnimatedSection>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+                What's Included
+              </h2>
+              <p className="text-white/80 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              </p>
+            </div>
+            <div className="space-y-3 text-white">
+              {[
+                { icon: Wine, text: "Drinks & Snacks" },
+                { icon: Music, text: "DJ & music show all night long" },
+              ].map((item) => (
+                <motion.div
+                  key={item.text}
+                  className="flex items-center gap-3 bg-white/10 p-3 rounded-lg hover:bg-white/20 transition-colors"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <item.icon className="w-5 h-5" />
+                  <span>{item.text}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Timeline */}
+        <AnimatedSection>
+          <div className="relative">
+            <h3 className="text-2xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
+              Event Timeline
+            </h3>
+            <div className="grid md:grid-cols-5 gap-4">
+              {[
+                { time: "7:00 PM", title: "Party Start", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+                { time: "8:40 PM", title: "Masti", desc: "Sed do eiusmod tempor incididunt ut labore et." },
+                { time: "9:40 PM", title: "Masti", desc: "Ut enim ad minim veniam, quis nostrud exercitation." },
+                { time: "10:40 PM", title: "Masti", desc: "Ullamco laboris nisi ut aliquip ex ea commodo." },
+                { time: "12:00 AM", title: "Bye bye", desc: "Excepteur sint occaecat cupidatat non proident." },
+              ].map((event, i) => (
+                <motion.div
+                  key={i}
+                  className="relative bg-white/10 p-4 rounded-lg"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="flex flex-col items-start space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-white" />
+                      <span className="font-bold text-white">{event.time}</span>
+                    </div>
+                    <h4 className="font-semibold text-white">{event.title}</h4>
+                    <p className="text-sm text-white/70">{event.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+      </div>
+    </div>
+  );
+}

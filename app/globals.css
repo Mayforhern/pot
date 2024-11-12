@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
   --foreground-rgb: 255, 255, 255;
@@ -10,7 +9,9 @@
   --background-end-rgb: 0, 0, 0;
 }
 
+/* Apply Poppins globally to the body */
 body {
+  font-family: 'Poppins', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -22,22 +23,29 @@ body {
 
 .font-old-standard-tt {
     font-family: var(--font-old-standard-tt), serif;
-  }
-  .navbar-background {
+}
+
+.font-inconsolata {
+    font-family: 'Inconsolata', monospace;
+}
+
+/* Navbar background styling */
+.navbar-background {
     background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
     padding: 1rem 0;
-  }
-  
-  .menu-item {
+}
+
+.menu-item {
     position: relative;
     padding: 1rem 2rem;
     text-align: center;
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 1.125rem;
-  }
-  
-  .menu-item:hover::after {
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu-item:hover::after {
     content: "";
     position: absolute;
     left: 0;
@@ -46,9 +54,9 @@ body {
     width: 100%;
     background-color: white;
     transition: width 0.3s ease;
-  }
-  
-  .menu-item::after {
+}
+
+.menu-item::after {
     content: "";
     position: absolute;
     left: 0;
@@ -57,25 +65,20 @@ body {
     width: 0;
     background-color: white;
     transition: width 0.3s ease;
-  }
+}
 
-.font-inconsolata {
-    font-family: 'Inconsolata', monospace;
-  }
-  
-  .section {
+.section {
     position: relative;
     z-index: 1;
-    margin-top: -6rem; /* This will pull the section up, creating the overlap */
-  }
-  
+    margin-top: -6rem; /* Creates the overlap */
+}
 
-
-  
-  .contributors-section {
+.contributors-section {
     z-index: 8;
-  }
-  .header {
+}
+
+/* Header and Navbar styling with Poppins */
+.header {
     width: 100%;
     position: fixed;
     top: 0;
@@ -84,8 +87,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.87); /* Adjust as needed */
+    background-color: rgba(0, 0, 0, 0.87);
     z-index: 100;
+    font-family: 'Poppins', sans-serif;
 }
 
 .navbar {
@@ -93,7 +97,7 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.87); /* Adjust as needed */
+    background: rgba(0, 0, 0, 0.87);
     box-shadow: 0 1rem rgba(0, 0, 0, 0);
     overflow: hidden;
 }
@@ -112,8 +116,10 @@ body {
     display: block;
     padding: 1rem;
     color: #fff;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Login section styling */
 .login {
     display: flex;
     align-items: center;
@@ -127,56 +133,59 @@ body {
 .login ul li {
     margin-left: 20px;
 }
-.sub-menu-item {
-    display: block; /* Make items block-level for easier clicking */
-    padding: 5px 20px; /* Padding for sub-menu items */
-    color: #5a5a5a; /* Text color for sub-menu items */
-    text-decoration: none; /* Remove underline */
-    font-size: 0.875rem; /* Reduce font size (adjust as needed) */
 
-  }
-  
-  .sub-menu-item:hover {
-    background-color: #666; /* Change background on hover */
-    color: white; /* Change text color on hover */
-  }
-  .logo {
-    font-size: 1.5rem; /* Adjust size as needed */
- /* Optional: make it bold */
-    color: white; /* Change text color to white */
-  }
- /* Debugging styles */
-.Canvas {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  }
-  
-.hero-section, .bouncy-cards-features {
-    background-color: transparent !important; /* Ensure transparency */
-    position: relative;
-    z-index: 10; /* Make sure it's layered correctly */
+.sub-menu-item {
+    display: block;
+    padding: 5px 20px;
+    color: #5a5a5a;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: 'Poppins', sans-serif;
 }
+
+.sub-menu-item:hover {
+    background-color: #666;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* Debugging styles */
+.Canvas {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-section, .bouncy-cards-features {
+    background-color: transparent !important;
+    position: relative;
+    z-index: 10;
+}
+
 .contributors-section,
 .clip-path-links,
 .footer {
   background-color: transparent;
 }
+
+/* Global CSS */
 html {
     scroll-behavior: smooth;
-  }
-  
-/* Global CSS */
-/* Global CSS */
+}
+
+/* Contributor section styling */
 .contributor-item {
-    padding: 2px; /* Adjust the spacing between items */
-  }
-  
-  .contributor-image {
-    transition: transform 0.3s ease-in-out; /* Smooth scale transition */
-    transform: scale(0.8); /* Reduce the image size */
-  }
-  
-  .contributor-image:hover {
-    transform: scale(1.1); /* Slightly increase the size on hover */
-  }
-  
-  
+    padding: 2px;
+}
+
+.contributor-image {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(0.8);
+}
+
+.contributor-image:hover {
+    transform: scale(1.1);
+}

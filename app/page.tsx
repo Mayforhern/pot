@@ -1,26 +1,13 @@
 'use client';
-
 import { useState, useEffect } from 'react';
-import { Old_Standard_TT } from 'next/font/google';
-import Contributors from './Contributors';
-import { Analytics } from "@vercel/analytics/react"
-import Navbar from './Navbar';
-import HeroSection from './HeroSection';
-import BouncyCardsFeatures from './BouncyCardsFeatures';
-import ClipPathLinks from './ClipPathLinks';
+import Component from './Organizers';
+import { Analytics } from "@vercel/analytics/react";
+import SmoothScrollHero from './HeroSection';
+import Example from './BouncyCardsFeatures';
 import Footer from './Footer';
-
-import ParticleRing from './ParticleRing';
-
-const oldStandardTT = Old_Standard_TT({ 
-  subsets: ['latin'], 
-  weight: ['400', '700'], 
-  variable: '--font-old-standard-tt' 
-});
 
 export default function Page() {
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,21 +18,15 @@ export default function Page() {
 
   return (
     <div className="text-gray-900">
-      <Navbar />
-      <Analytics/>
+      <Analytics />
 
       {/* ParticleRing as fixed background */}
-      <div className="fixed inset-0 -z-10">
-        <ParticleRing /> {/* Background for entire scrollable area */}
-      </div>
 
       {/* Content container with a higher z-index to layer above ParticleRing */}
-      <div className="relative z-20">
-        <HeroSection />
-        <BouncyCardsFeatures />
-        <Contributors highlightedIndex={highlightedIndex} />
-        <hr className="border-gray-400" />
-        <ClipPathLinks />
+      <div className="sections-container">
+        <SmoothScrollHero />
+        <Example />
+        <Component/>
         <Footer />
       </div>
     </div>
