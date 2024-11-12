@@ -140,7 +140,7 @@ const CenterImage = () => {
     <div
       className="relative sticky top-0 h-screen w-full"
       style={{
-        backgroundImage: "url(/hero/photo1.jpg)",
+        backgroundImage: "url(https://i.postimg.cc/DzqVhfy5/photo1.jpg)",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
