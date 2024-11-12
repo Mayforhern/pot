@@ -1,9 +1,10 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Component from './Organizers';
 import { Analytics } from "@vercel/analytics/react";
 import SmoothScrollHero from './HeroSection';
-import Example from './BouncyCardsFeatures';
+import Components from './Program';
 import Footer from './Footer';
 
 export default function Page() {
@@ -17,18 +18,19 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="text-gray-900">
-      <Analytics />
-
-      {/* ParticleRing as fixed background */}
-
-      {/* Content container with a higher z-index to layer above ParticleRing */}
-      <div className="sections-container">
-        <SmoothScrollHero />
-        <Example />
-        <Component/>
-        <Footer />
+    <>
+      <Head>
+        <title>Neon Night</title> {/* This is your desired title */}
+      </Head>
+      <div className="text-gray-900">
+        <Analytics />
+        <div className="sections-container">
+          <SmoothScrollHero />
+          <Components />
+          <Component />
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
