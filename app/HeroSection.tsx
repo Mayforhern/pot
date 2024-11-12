@@ -2,6 +2,7 @@ import { ReactLenis } from "lenis/dist/lenis-react";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import Image from 'next/image';
+import { useState } from 'react';
 
 const SmoothScrollHero = () => {
   return (
@@ -20,6 +21,8 @@ const SmoothScrollHero = () => {
 };
 
 const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-3 text-white">
       <button
@@ -32,6 +35,44 @@ const Nav = () => {
       >
         HOME <FiArrowRight />
       </button>
+
+      <div className="md:hidden">
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          className="p-2 -m-2 transition-all duration-200 rounded-full text-white focus:outline-none"
+        >
+          {/* Hamburger Icon */}
+          <svg
+            className="w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {isOpen && (
+        <div className="absolute top-12 left-0 right-0 bg-zinc-800">
+          <a href="#" className="block px-4 py-2 text-white">
+            About
+          </a>
+          <a href="#" className="block px-4 py-2 text-white">
+            Location
+          </a>
+          <a href="#" className="block px-4 py-2 text-white">
+            Tickets
+          </a>
+        </div>
+      )}
     </nav>
   );
 };
@@ -60,28 +101,6 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex flex-shrink-0">
             {/* Logo or brand name can be added here */}
-          </div>
-
-          <div className="md:hidden">
-            <button
-              type="button"
-              className="p-2 -m-2 transition-all duration-200 rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary focus:ring-offset-secondary"
-            >
-              <svg
-                className="w-6 h-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
           </div>
 
           <div className="hidden md:flex md:items-center md:space-x-10 lg:ml-28">
@@ -113,7 +132,7 @@ const Header = () => {
 const CenterImage = () => {
   return (
     <div
-      className="relative sticky top-0 h-screen w-full"
+      className="relative sticky top-0 h-screen w-full overflow-hidden"
       style={{
         backgroundImage: "url(https://i.postimg.cc/DzqVhfy5/photo1.jpg)",
         backgroundPosition: "center",
