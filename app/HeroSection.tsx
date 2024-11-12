@@ -140,11 +140,12 @@ const CenterImage = () => {
     <div
       className="relative sticky top-0 h-screen w-full"
       style={{
-        backgroundImage: "url(/hero/photo1.jpg)",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+  backgroundImage: "url(https://your-vercel-deployment-url.vercel.app/hero/photo1.jpg)",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+}}
+
     >
       <div className="absolute inset-0 flex items-center justify-start px-6 py-8 z-20 text-left mt-80">
         <div className="text-white w-1/2">
