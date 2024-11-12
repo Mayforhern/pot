@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Component from './Organizers';
-import { Analytics } from "@vercel/analytics/react";
 import SmoothScrollHero from './HeroSection';
 import Components from './Program';
 import Footer from './Footer';
@@ -23,7 +22,6 @@ export default function Page() {
         <title>Neon Night</title> {/* This is your desired title */}
       </Head>
       <div className="text-gray-900">
-        <Analytics />
         <div className="sections-container">
           <SmoothScrollHero />
           <Components />
