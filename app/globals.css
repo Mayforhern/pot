@@ -189,3 +189,285 @@ html {
 .contributor-image:hover {
     transform: scale(1.1);
 }
+/* Mobile Navbar Link Underline Animation */
+@media (max-width: 768px) {
+    .underline-animation {
+      position: relative;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+  
+    .underline-animation::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+  
+    .underline-animation:hover::after {
+      width: 100%;
+    }
+  }
+/* Smooth zoom and fade on image hover */
+.gallery-image {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .gallery-image:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    opacity: 0.9; /* Fade effect */
+  }
+  .parallax {
+    background-image: url('/gal/imagge1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates the parallax effect */
+    height: 100vh;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: semi-bold;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+/* Primary brand color */
+.primary-color {
+    color: #FF6347; /* Example: Tomato */
+  }
+  
+  .button-primary {
+    background-color: #FF6347;
+    color: white;
+  }
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  }
+/* Simple Grid layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .section {
+    padding: 50px 20px;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 600px) {
+    .header {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+/* CTA Button style */
+.cta-button {
+    background-color: #FF6347;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #D4573B; /* Darker shade */
+  }
+  /* Green to Blue Gradient Text */
+.gradient-text {
+    background: linear-gradient(45deg, #28a745, #007bff); /* Green to Blue Gradient */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    color: transparent; /* Make the text color transparent to show the background */
+    font-weight: bold; /* Make text bold (optional) */
+  }
+  .timeline {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 24px;
+  }
+  
+  .timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    width: 150px; /* Set a fixed width for each item */
+  }
+  
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+  }
+  
+  .timeline-item .event-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .timeline-item .event-details span,
+  .timeline-item .event-details h4,
+  .timeline-item .event-details p {
+    color: white;
+  }
+  
+  .bg-purple-500 { background-color: #9b4dff; }
+  .bg-pink-500 { background-color: #ec4899; }
+  .bg-teal-500 { background-color: #14b8a6; }
+  .bg-blue-500 { background-color: #3b82f6; }
+  .bg-orange-500 { background-color: #f97316; }
+  
+  /* Mobile View */
+  @media (max-width: 767px) {
+    .timeline {
+      flex-direction: column; /* Items stacked vertically */
+      gap: 24px; /* Add space between rows */
+      justify-content: center; /* Center the content horizontally */
+    }
+  
+    .timeline-item {
+      flex-direction: column; /* Ensure icon stays on top, text below */
+      text-align: center;
+      width: auto; /* Allow items to take their natural width */
+    }
+  
+    .timeline-item .event-details {
+      text-align: center; /* Text centered under icon */
+    }
+  }
+  
+  /* Desktop View */
+  @media (min-width: 768px) {
+    .timeline {
+      flex-direction: row; /* Keep items in a single horizontal row */
+      justify-content: center; /* Center the items horizontally */
+      align-items: center; /* Center items vertically */
+      gap: 40px;
+    }
+  
+    .timeline-item {
+      flex-direction: column; /* Icon on top, text below */
+      align-items: center;
+      text-align: center;
+    }
+  
+    .timeline-item .event-details {
+      text-align: center; /* Text aligned under the icon */
+    }
+  }
+/* Global CSS for "Buy Tickets Now" Button */
+.btn-beep {
+    animation: heartbeat 1s infinite ease-in-out;
+    position: relative;
+    display: inline-block;
+    background-color: #9b4de0;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 9999px;
+    font-weight: bold;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-beep:hover {
+    background-color: #7b3a8b;
+    transform: scale(1.1);
+  }
+  
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Snowflakes Animation */
+  .snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .snowflakes .snowflake {
+    position: absolute;
+    font-size: 24px;
+    animation: fall 3s linear infinite;
+  }
+  
+  .snowflakes .snowflake:nth-child(1) {
+    left: 20%;
+    animation-duration: 3s;
+    animation-delay: 0s;
+  }
+  
+  .snowflakes .snowflake:nth-child(2) {
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 1s;
+  }
+  
+  .snowflakes .snowflake:nth-child(3) {
+    left: 80%;
+    animation-duration: 2.5s;
+    animation-delay: 2s;
+  }
+  
+  @keyframes fall {
+    0% {
+      top: -10px;
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+             

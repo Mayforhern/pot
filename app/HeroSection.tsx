@@ -1,8 +1,7 @@
 import { ReactLenis } from "lenis/dist/lenis-react";
-import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import Image from 'next/image';
 import { useState } from 'react';
+import { motion } from "framer-motion";
 
 const SmoothScrollHero = () => {
   return (
@@ -24,16 +23,17 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-3 text-white">
+    <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-3 text-white transition-all duration-300 bg-transparent">
+      {/* Scrolls to the next section */}
       <button
         onClick={() => {
-          document.getElementById("hero-section")?.scrollIntoView({
+          document.getElementById("next-section")?.scrollIntoView({
             behavior: "smooth",
           });
         }}
         className="flex items-center gap-1 text-xs text-zinc-400"
       >
-        HOME <FiArrowRight />
+         
       </button>
 
       <div className="md:hidden">
@@ -60,30 +60,34 @@ const Nav = () => {
         </button>
       </div>
 
+      {/* Right-Aligned Linear Dropdown Menu for Mobile */}
       {isOpen && (
-        <div className="absolute top-12 left-0 right-0 bg-zinc-800">
-          <a href="#" className="block px-4 py-2 text-white">
+        <motion.div
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 10 }}
+          className="absolute top-12 right-4 bg-transparent flex flex-col items-end space-y-2 transition-transform duration-300 ease-in-out"
+        >
+          <a href="#" className="block px-4 py-2 text-white underline-animation">
             About
           </a>
-          <a href="#" className="block px-4 py-2 text-white">
+          <a href="#" className="block px-4 py-2 text-white underline-animation">
             Location
           </a>
-          <a href="#" className="block px-4 py-2 text-white">
+          <a href="#" className="block px-4 py-2 text-white underline-animation">
             Tickets
           </a>
-        </div>
+        </motion.div>
       )}
     </nav>
   );
 };
 
-const SECTION_HEIGHT = 1000; // Adjusted for responsiveness
-
 const Hero = () => {
   return (
     <div
       id="hero-section"
-      style={{ height: `calc(${SECTION_HEIGHT}px + 10vh)` }} // Adjusted for responsiveness
+      style={{ height: `calc(1000px + 10vh)` }}
       className="relative w-full"
     >
       <Header />
@@ -160,6 +164,15 @@ const ParallaxImages = () => {
   return (
     <div className="relative z-10 flex items-center justify-center w-full mt-10">
       {/* Add your images or content here */}
+    </div>
+  );
+};
+
+const NextSection = () => {
+  return (
+    <div id="next-section" className="h-screen bg-gray-800">
+      {/* Content for the next section */}
+      <h2 className="text-white text-3xl">Next Section</h2>
     </div>
   );
 };

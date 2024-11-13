@@ -2,7 +2,7 @@ import { useEffect, ReactNode } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Clock, Music, Wine } from "lucide-react"; 
+import { Clock, Music, Wine } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -32,10 +32,10 @@ function AnimatedSection({ children }: { children: ReactNode }) {
   );
 }
 
- function Components() {
+function Components() {
   return (
     <div className="max-w-full min-h-screen bg-zinc-950 text-white py-12">
-      <div className="max-w-6xl mx-auto space-y-24">
+      <div className="max-w-6xl mx-auto space-y-24 px-4">
         {/* Header */}
         <AnimatedSection>
           <div className="text-center space-y-4">
@@ -45,39 +45,6 @@ function AnimatedSection({ children }: { children: ReactNode }) {
             <p className="text-white/80 max-w-2xl mx-auto mt-40">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
-          </div>
-        </AnimatedSection>
-
-        {/* Feature Grid */}
-        <AnimatedSection>
-          <div className="flex">
-            {[
-              
-                { title: "DJ", image: "https://i.postimg.cc/T2JhJmg2/image1.png" },
-                { title: "Dancing", image: "https://i.postimg.cc/bYgNtPfs/image2.png" },
-                { title: "Live Band Performance", image: "https://i.postimg.cc/90Q2p4Hz/image3.png" },
-              
-              
-            ].map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                className="relative group overflow-hidden flex-1"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  width={400}
-                  height={300}
-                  className="object-cover w-full h-[200px] group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/40" />
-                <h2 className="absolute bottom-4 left-4 text-2xl font-bold text-white">
-                  {feature.title}
-                </h2>
-              </motion.div>
-            ))}
           </div>
         </AnimatedSection>
 
@@ -111,35 +78,32 @@ function AnimatedSection({ children }: { children: ReactNode }) {
           </div>
         </AnimatedSection>
 
-        {/* Timeline */}
+        {/* Horizontal Timeline */}
         <AnimatedSection>
           <div className="relative">
             <h3 className="text-2xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
               Event Timeline
             </h3>
-            <div className="grid md:grid-cols-5 gap-4">
+
+            <div className="timeline">
+              {/* Events */}
               {[
-                { time: "7:00 PM", title: "Party Start", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-                { time: "8:40 PM", title: "Masti", desc: "Sed do eiusmod tempor incididunt ut labore et." },
-                { time: "9:40 PM", title: "Masti", desc: "Ut enim ad minim veniam, quis nostrud exercitation." },
-                { time: "10:40 PM", title: "Masti", desc: "Ullamco laboris nisi ut aliquip ex ea commodo." },
-                { time: "12:00 AM", title: "Bye bye", desc: "Excepteur sint occaecat cupidatat non proident." },
-              ].map((event, i) => (
-                <motion.div
-                  key={i}
-                  className="relative bg-white/10 p-4 rounded-lg"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="flex flex-col items-start space-y-2">
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-white" />
-                      <span className="font-bold text-white">{event.time}</span>
-                    </div>
+    { time: "7:00 PM", title: "Party Start", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", iconClass: "bg-purple-500", icon: <Clock /> },
+    { time: "8:40 PM", title: "Masti", desc: "Sed do eiusmod tempor incididunt ut labore et.", iconClass: "bg-pink-500", icon: <Wine /> },
+    { time: "9:40 PM", title: "Masti", desc: "Ut enim ad minim veniam, quis nostrud exercitation.", iconClass: "bg-teal-500", icon: <Music /> },
+    { time: "10:40 PM", title: "Masti", desc: "Ullamco laboris nisi ut aliquip ex ea commodo.", iconClass: "bg-blue-500", icon: <Wine /> },
+    { time: "12:00 AM", title: "Bye bye", desc: "Excepteur sint occaecat cupidatat non proident.", iconClass: "bg-orange-500", icon: <Clock /> },
+  ].map((event, i) => (
+    <div className="timeline-item" key={i}>
+      <div className={`icon-container ${event.iconClass}`}>
+        {event.icon}
+      </div>
+      <div className="event-details">
+                    <span className="font-bold text-white">{event.time}</span>
                     <h4 className="font-semibold text-white">{event.title}</h4>
                     <p className="text-sm text-white/70">{event.desc}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -148,4 +112,5 @@ function AnimatedSection({ children }: { children: ReactNode }) {
     </div>
   );
 }
+
 export default Components;
