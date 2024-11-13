@@ -43,7 +43,7 @@ export default function Footer() {
         {/* Date */}
         <div>
           <h3 className="font-semibold text-xl mb-4 text-purple-400">Date</h3>
-          <p className="text-white/80">December, 31st, 2024</p>
+          <p className="text-white/80 text-sm sm:text-base md:text-lg">December, 31st, 2024</p>
         </div>
 
         {/* Location */}

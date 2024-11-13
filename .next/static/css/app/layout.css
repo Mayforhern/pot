@@ -1842,6 +1842,11 @@ html {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
   @media (min-width: 768px) {
 
@@ -1888,6 +1893,11 @@ html {
   .md\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
   @media (min-width: 1024px) {
