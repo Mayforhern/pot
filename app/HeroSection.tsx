@@ -110,13 +110,13 @@ const Header = () => {
 
           <div className="hidden md:flex md:items-center md:space-x-10 lg:ml-28">
             <a
-              href="#"
+              href="#hero-section"
               className="font-sans text-base font-normal text-white transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary focus:ring-offset-secondary"
             >
               About
             </a>
             <a
-              href="#hero-section"
+              href="#h"
               className="font-sans text-base font-normal text-white transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary focus:ring-offset-secondary"
             >
               Location
