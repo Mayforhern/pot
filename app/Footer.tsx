@@ -41,11 +41,11 @@ export default function Footer() {
         </div>
 
 {/* Date */}
-<div>
+<div className="flex flex-col items-center">
   <h3 className="font-semibold text-xl mb-4 text-purple-400">Date</h3>
-  <div className="text-white/80 text-sm sm:text-base text-center">
-    <p className="-ml-10">December</p> {/* Moves "December" even further left */}
-    <p>31<sup>st</sup>, 2024</p>
+  <div className="text-white/80 text-sm sm:text-base">
+    <p>December</p>
+    <p className="mt-2">31<sup>st</sup>, 2024</p>
   </div>
 </div>
 
