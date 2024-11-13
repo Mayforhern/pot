@@ -21,31 +21,31 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Links */}
-        <div>
-          <h3 className="font-semibold text-xl mb-4 text-purple-400">Links</h3>
-          <nav className="flex flex-col space-y-2">
-            <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
-              <FaHome className="mr-2" /> Home
-            </a>
-            <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
-              <FaTicketAlt className="mr-2" /> Tickets
-            </a>
-            <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
-              <FaCalendarAlt className="mr-2" /> Program
-            </a>
-            <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
-              <FaEnvelope className="mr-2" /> Contact
-            </a>
-          </nav>
-        </div>
+       {/* Links */}
+<div className="ml-[-1.5rem]">
+  <h3 className="font-semibold text-xl mb-4 text-purple-400">Links</h3>
+  <nav className="flex flex-col space-y-2">
+    <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
+      <FaHome className="mr-2" /> Home
+    </a>
+    <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
+      <FaTicketAlt className="mr-2" /> Tickets
+    </a>
+    <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
+      <FaCalendarAlt className="mr-2" /> Program
+    </a>
+    <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
+      <FaEnvelope className="mr-2" /> Contact
+    </a>
+  </nav>
+</div>
 
 {/* Date */}
-<div className="flex flex-col items-center">
+<div>
   <h3 className="font-semibold text-xl mb-4 text-purple-400">Date</h3>
-  <div className="text-white/80 text-sm sm:text-base">
-    <p>December</p>
-    <p className="mt-2">31<sup>st</sup>, 2024</p>
+  <div className="text-white/80 text-sm sm:text-base text-center">
+    <p className="-ml-10">December</p> {/* Moves "December" even further left */}
+    <p>31<sup>st</sup>, 2024</p>
   </div>
 </div>
 
