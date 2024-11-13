@@ -43,11 +43,12 @@ export default function Footer() {
 {/* Date */}
 <div>
   <h3 className="font-semibold text-xl mb-4 text-purple-400">Date</h3>
-  <div className="text-white/80 text-sm sm:text-base">
-    <p>December</p>
+  <div className="text-white/80 text-sm sm:text-base text-center">
+    <p className="-ml-6">December</p> {/* Moves "December" further left */}
     <p>31<sup>st</sup>, 2024</p>
   </div>
 </div>
+
 
         {/* Location */}
         <div>
