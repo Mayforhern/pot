@@ -19,62 +19,32 @@ function Component() {
     {
       name: "Shridh Jaiswal",
       role: "Founder",
-      image: "https://i.postimg.cc/zDSpwbVq/image1.png",
+      image: "https://i.postimg.cc/RV0cfsMK/image.png",
       instagram: "https://www.instagram.com/sshridhjaiswal?igsh=MXI1cm5tODVybnUzMg==",
     },
     {
       name: "Kavya Dodwani",
       role: "Co-founder",
-      image: "https://i.postimg.cc/zDSpwbVq/image1.png",
+      image: "https://i.postimg.cc/rmfZqdVr/image-1.png",
       instagram: "https://www.instagram.com/kvx_.01?igsh=amFoNnI3YmE4Ymxv",
     },
     {
       name: "Harsh Anchal",
       role: "Partner",
-      image: "https://i.postimg.cc/zDSpwbVq/image1.png",
+      image: "https://i.postimg.cc/s27qpDVB/image2.png",
       instagram: "https://www.instagram.com/harshanchal_008?igsh=MTRqNncxbWFwZHd0bA%3D%3D&utm_source=qr",
     },
     {
       name: "Sai Raj Sekhar",
       role: "Partner",
-      image: "https://i.postimg.cc/zDSpwbVq/image1.png",
+      image: "https://i.postimg.cc/qvqxVkgN/image3.png",
       instagram: "https://www.instagram.com/_tablaplayersai_24?igsh=MWg4c2t3ZWxnemI1Zw==",
     },
   ]
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white font-Poppins, sans-serif">
-      {/* Gallery Section */}
-      <section className="py-20 px-6">
-        <motion.h1
-          className="text-6xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Our Gallery
-        </motion.h1>
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-          {galleryImages.map((image, index) => (
-            <motion.div
-              key={index}
-              className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover transition-all duration-500 hover:brightness-50"
-              />
-              <div className="absolute inset-0 bg-black/40 hover:bg-black/50 transition-colors duration-300" />
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
+    <div className="bg-zinc-950 text-white font-Poppins, sans-serif">
+    
       {/* Organizers Section */}
       <section className="py-20 px-6 bg-zinc-900">
         <div className="max-w-7xl mx-auto">

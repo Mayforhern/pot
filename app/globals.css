@@ -21,13 +21,6 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.font-old-standard-tt {
-    font-family: var(--font-old-standard-tt), serif;
-}
-
-.font-inconsolata {
-    font-family: 'Inconsolata', monospace;
-}
 
 /* Navbar background styling */
 .navbar-background {
@@ -473,4 +466,14 @@ html {
   .bg-pattern {
     background-image: url('/path-to-pattern.png');
   }
-              
+
+/* Apply Poppins font only to the tickets page */
+.tickets-page {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Other global styles */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Default font */
+  }

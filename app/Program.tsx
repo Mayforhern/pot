@@ -34,7 +34,7 @@ function AnimatedSection({ children }: { children: ReactNode }) {
 
 function Components() {
   return (
-    <div className="max-w-full min-h-screen bg-zinc-950 text-white py-12">
+    <div id="program" className="max-w-full min-h-screen bg-zinc-950 text-white py-12">
       <div className="max-w-6xl mx-auto space-y-24 px-4">
         {/* Header */}
         <AnimatedSection>
@@ -43,7 +43,7 @@ function Components() {
               Party Program
             </h1>
             <p className="text-white/80 max-w-2xl mx-auto mt-40">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            Ring in the New Year with exciting music, vibrant celebrations, and unforgettable moments! Join us for an evening filled with dance, fun, and a toast to new beginnings.
             </p>
           </div>
         </AnimatedSection>
@@ -85,7 +85,7 @@ function Components() {
                 What's Included
               </h2>
               <p className="text-white/80 mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              Get ready to kick off the New Year with unforgettable moments, amazing vibes, and an electrifying atmosphere!
               </p>
             </div>
             <div className="space-y-3 text-white">
@@ -117,11 +117,11 @@ function Components() {
             <div className="timeline">
               {/* Events */}
               {[
-    { time: "7:00 PM", title: "Party Start", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", iconClass: "bg-purple-500", icon: <Clock /> },
-    { time: "8:40 PM", title: "Masti", desc: "Sed do eiusmod tempor incididunt ut labore et.", iconClass: "bg-pink-500", icon: <Wine /> },
-    { time: "9:40 PM", title: "Masti", desc: "Ut enim ad minim veniam, quis nostrud exercitation.", iconClass: "bg-teal-500", icon: <Music /> },
-    { time: "10:40 PM", title: "Masti", desc: "Ullamco laboris nisi ut aliquip ex ea commodo.", iconClass: "bg-blue-500", icon: <Wine /> },
-    { time: "12:00 AM", title: "Bye bye", desc: "Excepteur sint occaecat cupidatat non proident.", iconClass: "bg-orange-500", icon: <Clock /> },
+    { time: "7:00 PM", title: "Party Start", desc: "The event officially begins with drinks and light music.", iconClass: "bg-purple-500", icon: <Clock /> },
+    { time: "8:40 PM", title: "Masti", desc: "Enjoy a variety of activities to engage with guests.", iconClass: "bg-pink-500", icon: <Wine /> },
+    { time: "9:40 PM", title: "Masti", desc: "The dance floor opens with upbeat music.", iconClass: "bg-teal-500", icon: <Music /> },
+    { time: "10:40 PM", title: "Masti", desc: "Relax and enjoy conversations with fellow guests.", iconClass: "bg-blue-500", icon: <Wine /> },
+    { time: "12:00 AM", title: "Bye bye", desc: "The evening concludes with fond farewells.", iconClass: "bg-orange-500", icon: <Clock /> },
   ].map((event, i) => (
     <div className="timeline-item" key={i}>
       <div className={`icon-container ${event.iconClass}`}>

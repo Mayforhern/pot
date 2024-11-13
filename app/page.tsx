@@ -25,6 +25,7 @@ export default function Page() {
         <div className="sections-container">
           <SmoothScrollHero />
           <Components />
+          
           <Component />
           <Footer />
         </div>

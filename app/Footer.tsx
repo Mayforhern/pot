@@ -1,4 +1,5 @@
 import { FaHome, FaTicketAlt, FaCalendarAlt, FaEnvelope, FaInstagram } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -21,32 +22,34 @@ export default function Footer() {
           </p>
         </div>
 
-       {/* Links */}
-<div className="ml-[-1.5rem]">
-  <h3 className="font-semibold text-xl mb-4 text-purple-400">Links</h3>
-  <nav className="flex flex-col space-y-2">
-    <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
-      <FaHome className="mr-2" /> Home
-    </a>
-    <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
-      <FaTicketAlt className="mr-2" /> Tickets
-    </a>
-    <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
-      <FaCalendarAlt className="mr-2" /> Program
-    </a>
-    <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
-      <FaEnvelope className="mr-2" /> Contact
-    </a>
-  </nav>
-</div>
-{/* Date */}
-<div>
-  <h3 className="font-semibold text-xl mb-4 text-purple-400">Date</h3>
-  <div className="text-white/80 text-sm sm:text-base text-center">
-    <p className="-ml-4">December</p> {/* Moves "December" left */}
-    <p className="-ml-4">31<sup>st</sup>, 2024</p> {/* Moves "31st, 2024" left */}
-  </div>
-</div>
+        {/* Links */}
+        <div className="ml-[-1.5rem]">
+          <h3 className="font-semibold text-xl mb-4 text-purple-400">Links</h3>
+          <nav className="flex flex-col space-y-2">
+            <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
+              <FaHome className="mr-2" /> Home
+            </a>
+            <Link href="/tickets" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
+              <FaTicketAlt className="mr-2" /> Tickets
+            </Link>
+            <a href="#program" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
+              <FaCalendarAlt className="mr-2" /> Program
+            </a>
+            
+            <Link href="/contact" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
+              <FaEnvelope className="mr-2" /> Contact
+            </Link>
+          </nav>
+        </div>
+
+        {/* Date */}
+        <div>
+          <h3 className="font-semibold text-xl mb-4 text-purple-400">Date</h3>
+          <div className="text-white/80 text-sm sm:text-base text-center">
+            <p className="-ml-4">December</p> {/* Moves "December" left */}
+            <p className="-ml-4">31<sup>st</sup>, 2024</p> {/* Moves "31st, 2024" left */}
+          </div>
+        </div>
 
         {/* Location */}
         <div>
@@ -59,19 +62,12 @@ export default function Footer() {
       {/* Bottom Centered Section for Mobile */}
       <div className="flex flex-col items-center mt-auto space-y-8 text-center">
         
-        {/* CTA Button */}
-        <a 
-          href="#"
-          className="bg-purple-400 text-white py-3 px-6 rounded-full text-lg font-semibold shadow-md hover:bg-purple-500 transition-all duration-300"
-        >
-          Buy Tickets Now
-          {/* Snowflakes */}
-          <div className="snowflakes">
-            <div className="snowflake">❄️</div>
-            <div className="snowflake">❄️</div>
-            <div className="snowflake">❄️</div>
-          </div>
-        </a>
+        {/* CTA Button with Next.js Link */}
+        <Link href="/tickets" legacyBehavior>
+          <a className="bg-purple-400 text-white py-3 px-6 rounded-full text-lg font-semibold shadow-md hover:bg-purple-500 transition-all duration-300">
+            Buy Tickets Now
+          </a>
+        </Link>
 
         {/* Instagram Link */}
         <a 

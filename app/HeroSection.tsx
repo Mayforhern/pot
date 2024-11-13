@@ -1,7 +1,8 @@
 import { ReactLenis } from "lenis/dist/lenis-react";
 import { FiArrowRight } from "react-icons/fi";
-import { useState } from 'react';
+import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const SmoothScrollHero = () => {
   return (
@@ -33,7 +34,7 @@ const Nav = () => {
         }}
         className="flex items-center gap-1 text-xs text-zinc-400"
       >
-         
+        Scroll Down <FiArrowRight />
       </button>
 
       <div className="md:hidden">
@@ -68,15 +69,15 @@ const Nav = () => {
           exit={{ opacity: 0, x: 10 }}
           className="absolute top-12 right-4 bg-transparent flex flex-col items-end space-y-2 transition-transform duration-300 ease-in-out"
         >
-          <a href="#" className="block px-4 py-2 text-white underline-animation">
+          <a href="#hero-section" className="block px-4 py-2 text-white underline-animation">
             About
           </a>
           <a href="#" className="block px-4 py-2 text-white underline-animation">
             Location
           </a>
-          <a href="#" className="block px-4 py-2 text-white underline-animation">
+          <Link href="/tickets" className="block px-4 py-2 text-white underline-animation">
             Tickets
-          </a>
+          </Link>
         </motion.div>
       )}
     </nav>
@@ -115,13 +116,13 @@ const Header = () => {
               About
             </a>
             <a
-              href="#"
+              href="#hero-section"
               className="font-sans text-base font-normal text-white transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary focus:ring-offset-secondary"
             >
               Location
             </a>
             <a
-              href="#"
+              href="/tickets"
               className="font-sans text-base font-normal text-white transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary focus:ring-offset-secondary"
             >
               Tickets
@@ -148,8 +149,8 @@ const CenterImage = () => {
         <div className="text-white w-1/2">
           <h1 className="font-sans text-base font-normal tracking-tight text-white text-opacity-70">New year party eve</h1>
           <p className="mt-6 tracking-tighter text-white">
-            <span className="font-serif italic font-normal text-8xl">Luxe</span><br />
-            <span className="font-sans font-normal text-7xl">Nighters</span>
+            <span className="font-serif italic font-normal text-8xl">Neon</span><br />
+            <span className="font-sans font-normal text-7xl">Night</span>
           </p>
           <p className="max-w-md mt-5 font-sans text-base font-normal leading-7 text-white text-opacity-70">
             Luxe Nighters presents an unforgettable New Year’s Eve party filled with luxury, excitement, and dazzling celebrations to ring in the new year!
