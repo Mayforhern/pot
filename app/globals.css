@@ -470,4 +470,7 @@ html {
       opacity: 0;
     }
   }
-             
+  .bg-pattern {
+    background-image: url('/path-to-pattern.png');
+  }
+              
