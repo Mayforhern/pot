@@ -39,13 +39,12 @@ export default function Footer() {
     </a>
   </nav>
 </div>
-
 {/* Date */}
 <div>
   <h3 className="font-semibold text-xl mb-4 text-purple-400">Date</h3>
   <div className="text-white/80 text-sm sm:text-base text-center">
-    <p className="-ml-10">December</p> {/* Moves "December" even further left */}
-    <p>31<sup>st</sup>, 2024</p>
+    <p className="-ml-4">December</p> {/* Moves "December" left */}
+    <p className="-ml-4">31<sup>st</sup>, 2024</p> {/* Moves "31st, 2024" left */}
   </div>
 </div>
 

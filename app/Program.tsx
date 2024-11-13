@@ -47,6 +47,35 @@ function Components() {
             </p>
           </div>
         </AnimatedSection>
+           {/* Feature Grid */}
+           <AnimatedSection>
+          <div className="flex gap-4">
+            {[
+              { title: "DJ", image: "https://i.postimg.cc/T2JhJmg2/image1.png" },
+              { title: "Dancing", image: "https://i.postimg.cc/bYgNtPfs/image2.png" },
+              { title: "Live Band Performance", image: "https://i.postimg.cc/90Q2p4Hz/image3.png" },
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                className="relative group overflow-hidden flex-1"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={400}
+                  height={300}
+                  className="object-cover w-full h-[200px] group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/40" />
+                <h2 className="absolute bottom-4 left-4 text-xl sm:text-2xl md:text-2xl lg:text-2xl font-bold text-white">
+                  {feature.title}
+                </h2>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
 
         {/* What's Included */}
         <AnimatedSection>
