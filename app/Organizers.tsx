@@ -78,14 +78,14 @@ function Component() {
       {/* Organizers Section */}
       <section className="py-20 px-6 bg-zinc-900">
         <div className="max-w-7xl mx-auto">
-        <motion.h2 
-  className="text-6xl font-bold text-center mb-6 gradient-text"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
->
-  Meet The Organizers
-</motion.h2>
+          <motion.h2 
+            className="text-6xl font-bold text-center mb-6 gradient-text"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Meet The Organizers
+          </motion.h2>
 
           <motion.p
             className="text-zinc-400 text-center max-w-2xl mx-auto mb-16"
@@ -96,7 +96,7 @@ function Component() {
             Our amazing team is behind every memorable experience.
           </motion.p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
             {organizers.map((person, index) => (
               <motion.div
                 key={person.name}
@@ -105,7 +105,7 @@ function Component() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="relative w-48 h-48 mx-auto mb-4 overflow-hidden rounded-xl shadow-xl transition-transform transform group-hover:scale-105">
+                <div className="relative w-32 h-32 sm:w-48 sm:h-48 mx-auto mb-4 overflow-hidden rounded-xl shadow-xl transition-transform transform group-hover:scale-105">
                   <Image
                     src={person.image}
                     alt={person.name}
@@ -113,7 +113,9 @@ function Component() {
                     className="object-cover transition-all duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="font-semibold text-xl mb-1 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600">{person.name}</h3>
+                <h3 className="font-semibold text-xl mb-1 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600">
+                  {person.name}
+                </h3>
                 <p className="text-zinc-400 mb-2">{person.role}</p>
                 <a
                   href={person.instagram}
@@ -124,8 +126,8 @@ function Component() {
                   <Image
                     src="https://i.postimg.cc/mkRRFzhP/instagram.png"
                     alt="Instagram"
-                    width={48}
-                    height={48}
+                    width={32}  // Smaller icon size on mobile
+                    height={32}
                     className="transition-transform duration-300 transform hover:scale-110"
                   />
                 </a>
