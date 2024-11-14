@@ -11,7 +11,7 @@
 
 /* Apply Poppins globally to the body */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -152,7 +152,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.hero-section, .bouncy-cards-features {
+.hero-section {
     background-color: transparent !important;
     position: relative;
     z-index: 10;
@@ -235,11 +235,11 @@ html {
     animation: spin 1s linear infinite;
   }
   body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
   }
   
   h1, h2, h3 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather';
   }
   h1 {
     font-size: 3rem;
@@ -468,12 +468,12 @@ html {
   }
 
 /* Apply Poppins font only to the tickets page */
-.tickets-page {
-    font-family: 'Poppins', sans-serif;
+.tickets {
+    font-family: 'Poppins';
   }
   
   /* Other global styles */
   body {
     margin: 0;
-    font-family: Arial, sans-serif; /* Default font */
+    font-family: Arial; /* Default font */
   }

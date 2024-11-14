@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-900 text-white font-poppins py-12 border-t border-white/20 rounded-lg shadow-lg relative">
+    <footer className="bg-zinc-900 text-white font-sans py-12 border-t border-white/20 rounded-lg shadow-lg relative">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-cover bg-opacity-10 bg-pattern" />
 
@@ -13,10 +13,10 @@ export default function Footer() {
         {/* Logo and Copyright */}
         <div className="space-y-4">
           <div className="inline-block px-6 py-4 border-b border-white/20 rounded-lg shadow-md">
-            <span className="font-bold text-4xl text-purple-400">New Year</span>
-            <span className="text-white/80 text-2xl">Party</span>
+            <span className="font-bold font-sans text-4xl text-purple-400">New Year</span>
+            <span className="text-white/80 font-sans text-2xl">Party</span>
           </div>
-          <p className="text-sm text-white/60 mt-2">
+          <p className="text-sm font-sans text-white/60 mt-2">
             Copyright © 2024 Luxe Nighters <br />
             All rights reserved.
           </p>
@@ -24,7 +24,7 @@ export default function Footer() {
 
         {/* Links */}
         <div className="ml-[-1.5rem]">
-          <h3 className="font-semibold text-xl mb-4 text-purple-400">Links</h3>
+          <h3 className="font-semibold text-xl mb-4 font-sans text-purple-400">Links</h3>
           <nav className="flex flex-col space-y-2">
             <a href="#" className="flex items-center hover:text-purple-300 transition-all duration-300 transform hover:underline">
               <FaHome className="mr-2" /> Home
@@ -44,7 +44,7 @@ export default function Footer() {
 
         {/* Date */}
         <div>
-          <h3 className="font-semibold text-xl mb-4 text-purple-400">Date</h3>
+          <h3 className="font-semibold font-sans text-xl mb-4 text-purple-400">Date</h3>
           <div className="text-white/80 text-sm sm:text-base text-center">
             <p className="-ml-4">December</p> {/* Moves "December" left */}
             <p className="-ml-4">31<sup>st</sup>, 2024</p> {/* Moves "31st, 2024" left */}
@@ -53,7 +53,7 @@ export default function Footer() {
 
         {/* Location */}
         <div>
-          <h3 className="font-semibold text-xl mb-4 text-purple-400">Party Location</h3>
+          <h3 className="font-semibold font-sans text-xl mb-4 text-purple-400">Party Location</h3>
           <p className="text-white/80">Location to be revealed soon</p>
         </div>
 
@@ -62,12 +62,7 @@ export default function Footer() {
       {/* Bottom Centered Section for Mobile */}
       <div className="flex flex-col items-center mt-auto space-y-8 text-center">
         
-        {/* CTA Button with Next.js Link */}
-        <Link href="/tickets" legacyBehavior>
-          <a className="bg-purple-400 text-white py-3 px-6 rounded-full text-lg font-semibold shadow-md hover:bg-purple-500 transition-all duration-300">
-            Buy Tickets Now
-          </a>
-        </Link>
+       
 
         {/* Instagram Link */}
         <a 

@@ -4,17 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 function Component() {
-  const galleryImages = [
-    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Crowd dancing at night club" },
-    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Friends enjoying party" },
-    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Concert light show" },
-    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Fireworks display" },
-    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Laser light show" },
-    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Stage performance" },
-    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Balloon drop moment" },
-    { src: "https://i.postimg.cc/zDSpwbVq/image1.png", alt: "Dance floor celebration" },
-  ]
-
+ 
   const organizers = [
     {
       name: "Shridh Jaiswal",
@@ -43,13 +33,13 @@ function Component() {
   ]
 
   return (
-    <div className="bg-zinc-950 text-white font-Poppins, sans-serif">
+    <div className="bg-zinc-950 text-white font-Poppins, font-sans">
     
       {/* Organizers Section */}
       <section className="py-20 px-6 bg-zinc-900">
         <div className="max-w-7xl mx-auto">
           <motion.h2 
-            className="text-6xl font-bold text-center mb-6 gradient-text"
+            className="text-6xl font-bold font-sans text-center mb-6 gradient-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -58,7 +48,7 @@ function Component() {
           </motion.h2>
 
           <motion.p
-            className="text-zinc-400 text-center max-w-2xl mx-auto mb-16"
+            className="text-zinc-400 font-sans text-center max-w-2xl mx-auto mb-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -83,7 +73,7 @@ function Component() {
                     className="object-cover transition-all duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="font-semibold text-xl mb-1 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600">
+                <h3 className="font-semibold font-sans text-xl mb-1 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600">
                   {person.name}
                 </h3>
                 <p className="text-zinc-400 mb-2">{person.role}</p>
