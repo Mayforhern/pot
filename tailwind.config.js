@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         inter: ['var(--font-inter)'],
         orbitron: ['var(--font-orbitron)'],
+        
       },
     },
   },

@@ -1,4 +1,4 @@
-// File: /home/seruji/code/sikhra/Luxe nighters/app/layout.tsx
+// File: /home/seruji/code/sikhra/pot/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
