@@ -120,3 +120,12 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+
+.dynapuff-may {
+  font-family: "DynaPuff", system-ui !important;
+  font-optical-sizing: auto;
+  font-weight: 700 !important;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}

@@ -10,18 +10,44 @@ const SECTIONS = [
     title: 'MAY',
     content: 'May is a creative developer',
     component: (
-      <motion.section className="h-screen flex flex-col items-center justify-center relative">
-        <h1 className="text-[20vw] font-bold leading-none">MAY</h1>
-        <p className="mt-2 text-lg">May is a creative developer</p>
+      <motion.section
+        className="h-screen w-full flex flex-col items-center justify-center relative bg-cover bg-center"
+        style={{
+          backgroundImage: `url('/gal/image.webp')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Positioned run.webp */}
+        <img
+          className="absolute 
+            left-[5vw] top-[70%] translate-y-[-50%] h-[25vh] w-auto z-10
+            sm:top-[75%] sm:left-[10vw] sm:h-[15vh]  /* Mobile adjustments */
+            lg:top-[70%] lg:left-[5vw] lg:h-[20vh] /* PC adjustments */"
+          src="/gal/run.webp"
+          alt="Running Animation"
+        />
+        
+        {/* MAY text */}
+        <h1 className="text-[20vw] font-bold leading-none flex items-center dynapuff-may relative">
+          MAY
+          {/* Positioned video thumbnail */}
+          <img
+            className="absolute left-[110%] top-[50%] translate-y-[-50%] h-[8vw] w-auto"
+            src="/gal/vid.webp"
+            alt="Video Thumbnail"
+          />
+        </h1>
+
+        <p className="mt-6 text-lg relative">May is a creative developer</p>
       </motion.section>
     ),
   },
   {
     title: 'Second Section',
     content: '',
-    component: <SecondSection darkTheme={false} />, // Dynamically replace this later
+    component: <SecondSection darkTheme={false} />,
   },
-  
 ];
 
 const SPRING_OPTIONS = {

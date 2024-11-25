@@ -8,7 +8,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['var(--font-inter)'],
+        
+        dynapuff: ['DynaPuff', 'cursive'],
+      
+    
         orbitron: ['var(--font-orbitron)'],
         
       },
